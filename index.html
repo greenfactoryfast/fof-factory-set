@@ -1,6 +1,82 @@
-a<!doctype html>
-<html>
-  <body>
-    <p>This is a blank webpage.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Layout</title>
+    <style>
+        /* General Reset and Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black; /* Pitch black background */
+            overflow: hidden;
+        }
+
+        /* Container Flexbox */
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* Image Styling */
+        .side-image {
+            width: 20%;  /* Side images take 20% of the width */
+            object-fit: contain;
+        }
+
+        .main-image {
+            width: 60%; /* Main image takes 60% of the width */
+            object-fit: contain;
+        }
+
+        /* Media Query for responsiveness */
+        @media screen and (max-width: 1200px) {
+            .side-image {
+                width: 15%; /* Slightly reduce side image size on smaller screens */
+            }
+            .main-image {
+                width: 70%; /* Increase main image size */
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .side-image {
+                width: 10%; /* Further reduce side image size */
+            }
+            .main-image {
+                width: 80%; /* Increase main image size */
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .side-image {
+                display: none; /* Hide side images on very small screens */
+            }
+            .main-image {
+                width: 100%; /* Main image takes full width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://josnai.github.io/number1ghostriderfan/coolimages/spinning-skull.gif" alt="Left Image" class="side-image left">
+        <img src="https://media.discordapp.net/attachments/562541929246752778/1348625931161571330/cooltext477869039732634.gif?ex=67d02546&is=67ced3c6&hm=b3b52f80201d1b95b61f92ebf038e8d172571b43a4827b0f12d6546775218308&=&width=2401&height=167" alt="Center Image" class="main-image">
+        <img src="https://josnai.github.io/number1ghostriderfan/coolimages/spinning-skull.gif" alt="Right Image" class="side-image right">
+    </div>
+</body>
 </html>
